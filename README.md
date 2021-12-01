@@ -5,7 +5,7 @@ This is an R package developed as a wrapper to work with Hitachi ABB's TRMTracke
 It first requires a set of credentials (username & password) to generate an auth token using `get_auth_token()`.
 These usernames & passwords should be stored in a .Renviron on the local machine and/or sever for R to easily access with `readRenviron()`.
 
-Afterward authentication, that auth token can be used to pull various sets of data/reports from the API.
+After authentication, that auth token can be used to pull various sets of data/reports from the API.
 
 ### A simple example to retrieve the list of available reports:
 
