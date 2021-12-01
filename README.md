@@ -1,4 +1,4 @@
-## trmTracker R Package
+# trmTracker R Package
 
 This is an R package developed as a wrapper to work with Hitachi ABB's TRMTracker API.
 
@@ -7,7 +7,7 @@ These usernames & passwords should be stored in a .Renviron on the local machine
 
 Afterward authentication, that auth token can be used to pull various sets of data/reports from the API.
 
-# A simple example to retrieve the list of available reports:
+### A simple example to retrieve the list of available reports:
 
 `readRenviron(~/.Renviron)`
 
