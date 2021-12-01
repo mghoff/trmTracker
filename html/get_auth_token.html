@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: get_auth_token function to authenticate with the Pioneer TRM...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for get_auth_token {pioneer}"><tr><td>get_auth_token {pioneer}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>get_auth_token
+function to authenticate with the Pioneer TRM Tracker API.
+</h2>
+
+<h3>Description</h3>
+
+<p>The function, using your Pioneer login credentials, retrieves the required Auth token to pull data/reports.
+</p>
+<p>Use this function to assign the Auth token to an object.
+</p>
+<p>While not necessary, you may want to store your API credentials in your .Renviron file.
+If so, place &quot;pioneer_usr='&lt;YOUR_USERNAME&gt;'&quot; &amp; &quot;pioneer_pwd='&lt;YOUR_PASSWORD&gt;'&quot; into .Renviron
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+get_auth_token(username = Sys.getenv("pioneer_usr"), password = Sys.getenv("pioneer_pwd"), verbose = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>username</code></td>
+<td>
+
+<p>Your username for Pioneer's API - the same one you login with to the TRMTracker website
+The function is built to automatically pull your username from your .Renviron file.
+</p>
+</td></tr>
+<tr valign="top"><td><code>password</code></td>
+<td>
+
+<p>Your password for Pioneer's API, the same one you login with to the TRMTracker website.
+The function is built to automatically pull your password from your .Renviron file.
+</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+
+<p>Retrieves, and prints to console, all HTTP traffic information.
+This has been directly inherited from the 'httr' package.
+</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+## The function is currently defined as
+myToken &lt;- get_auth_token(username = 'XXXX', password = 'XXXXXXX', verbose = T)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>pioneer</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

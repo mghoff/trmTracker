@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: get_report_params</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for get_report_params {pioneer}"><tr><td>get_report_params {pioneer}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>get_report_params
+
+</h2>
+
+<h3>Usage</h3>
+
+<pre>
+get_report_params(tokenID, report, verbose = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>tokenID</code></td>
+<td>
+
+<p>This is your Auth token, a result from the 'get_auth_token()' function
+</p>
+</td></tr>
+<tr valign="top"><td><code>report</code></td>
+<td>
+
+<p>A 1x2 data.frame from the report list, where the first column is the report name,
+and the second column is the report hash value
+</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+
+<p>Retrieves, and prints to console, all HTTP traffic information.
+This has been directly inherited from the 'httr' package.
+</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>An nx3 data.frame consisting of the required parameters, and their data types, for the specified report.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# Authenticate
+myToken &lt;- get_auth_token()
+
+# Pull list of reports
+myReportList &lt;- get_report_list(tokenID = myToken)
+
+# Get the Price Report info (name and hash value)
+myReport &lt;- myReportList[which(myReportList$report_name == 'Price Report'),]
+
+# Pull the required parameters for the specified report (Price Report) to later retrieve its data
+reportParameters &lt;- get_report_params(tokenID = myToken, report = myReport, verbose = T)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>pioneer</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

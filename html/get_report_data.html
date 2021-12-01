@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: get_report_data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for get_report_data {pioneer}"><tr><td>get_report_data {pioneer}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>get_report_data
+
+</h2>
+
+<h3>Usage</h3>
+
+<pre>
+get_report_data(tokenID, report_parameters, verbose = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>tokenID</code></td>
+<td>
+
+<p>This is your Auth token, a result from the 'get_auth_token()' function
+</p>
+</td></tr>
+<tr valign="top"><td><code>report_parameters</code></td>
+<td>
+
+<p>This is a list containing 3 objects:
+</p>
+
+<ul>
+<li><p>report_name
+</p>
+</li>
+<li><p>report_hash
+</p>
+</li>
+<li><p>report_parameters
+</p>
+</li></ul>
+
+<p>where 'report_parameters' is a data.frame consisting of the required parameters and their values for the query.
+</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+
+<p>Retrieves, and prints to console, all HTTP traffic information.
+This has been directly inherited from the 'httr' package.
+</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A data.frame containing any and all data from the specified report given parameter limits.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# Authenticate
+myToken &lt;- get_auth_token()
+
+# Pull list of reports
+myReportList &lt;- get_report_list(tokenID = myToken)
+
+# Get the Price Report info (name and hash value)
+myReport &lt;- myReportList[which(myReportList$report_name == 'Price Report'),]
+
+# Pull the required parameters for the specified report (Price Report) to later retrieve its data
+reportParameters &lt;- get_report_params(tokenID = myToken, report = myReport, verbose = T)
+
+# Build report_parameters object
+rpt_params &lt;- list('report_name' = myReport$report_name,
+                   'report_hash' = myReport$report_hash,
+                   'report_parameters' = as.data.frame('channel' = 'NULL',
+                                                      'hub' = 'NULL',
+                                                      'uid' = 'NULL',
+                                                      'zone' = 'NULL',
+                                                      'date' = '04/30/2020',
+                                                      stringsAsFactors = FALSE))
+
+# Query the API
+data &lt;- get_report_data(tokenID = myToken, report_parameters = rpt_params, verbose = T)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>pioneer</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,18 @@
+Package: trmTracker
+Type: Package
+Title: Easily authenticate and pull down reports/data from Pioneer's TRM Tracker API
+Version: 0.1.0
+Author: Matthew G. Hoff
+Maintainer: Matthew G. Hoff <matthew.g.hoff@gmail.com>
+Description: This package simplifies the connection and pulling of reports from Hitachi Energy's TRMTracker API
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Depends:
+    data.table,
+    httr,
+    jsonlite
+Suggests:
+    dplyr
+    

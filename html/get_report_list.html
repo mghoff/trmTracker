@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: get_report_list</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for get_report_list {pioneer}"><tr><td>get_report_list {pioneer}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>get_report_list
+
+</h2>
+
+<h3>Description</h3>
+
+<p>This function returns, as a data.frame, the list of available Pioneer reports and their Hash values
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+get_report_list(tokenID, verbose=TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>tokenID</code></td>
+<td>
+
+<p>This is your Auth token, a result from the 'get_auth_token()' function
+</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+
+<p>Retrieves, and prints to console, all HTTP traffic information.
+This has been directly inherited from the 'httr' package.
+</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A two-column data.frame, where the number of rows is determined by the number of available reports from the API.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## The function is currently defined as
+myReportList &lt;- get_report_list(tokenID = myToken, verbose = T)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>pioneer</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>
