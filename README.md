@@ -11,6 +11,6 @@ After authentication, that auth token can be used to pull various sets of data/r
 
 `readRenviron(~/.Renviron)`
 
-`myToken <- trmTracker::get_auth_token(username = Sys.getenv("trm_usr"), password = Sys.getenv("trm_pwd")`
+`myToken <- trmTracker::get_auth_token(username = Sys.getenv("TRM_usr"), password = Sys.getenv("TRM_pwd")`
 
 `reportList <- trmTracker::get_report_list(tokenID = myToken, verbose = TRUE)`
